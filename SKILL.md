@@ -171,7 +171,7 @@ See `references/aws-sam.md` for conventions, Lambda best practices and a snippet
 - **Trunk-based**: `main` is the only long-lived branch. Feature branches live hours to a day or two, never weeks; rebase on `main` daily.
 - **One concern per PR**, small enough to review in 15 minutes. Split refactors from behaviour changes. Unfinished work is merged behind a flag or hidden, not kept on a branch.
 - **The PR description says why**, what changed for the user, how it was tested, and has screenshots for UI changes. Link the decision log entry if there is one.
-- **Branch protection on `main`**: CI green and one review required, no direct pushes, squash merge so every commit on `main` is one working change.
+- **Branch protection on `main`**: CI green and one review required (once there is more than one maintainer), no direct pushes, squash merge so every commit on `main` is one working change.
 - **Every merge deploys to dev automatically**; prod deploys from `main` with a manual approval in GitHub Actions (environment protection), never from a laptop.
 - **Safe rollouts**: `AutoPublishAlias` + `DeploymentPreference` (e.g. `Linear10PercentEvery1Minute` in prod) with the error alarms as rollback triggers.
 - **Data changes are expand → migrate → contract** over separate deploys: add the new attribute or index, backfill with an idempotent script, switch reads, only then remove the old one.
