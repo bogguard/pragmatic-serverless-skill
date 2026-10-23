@@ -4,14 +4,14 @@ Engineering standards for building **simple, correct, secure, pleasant and cheap
 
 It covers:
 
-- **Engineering**: core principles, a default stack, one repository layout, code style, robustness, testing and a definition of done.
+- **Engineering**: core principles, a default stack, one repository layout, code style, robustness, testing, short-lived branches and safe releases, and a definition of done.
 - **AWS**: SAM conventions, Lambda best practices, DynamoDB single-table modelling, security, privacy (GDPR), observability and cost control.
 - **Product quality**: usability reviewed like a demanding UX engineer, visual design aimed at "made by a good designer", accessibility (WCAG 2.2 AA), and printed material (labels, cards, tickets) treated as part of the product.
 
 ```
 SKILL.md                      the standards (what Claude reads first)
 references/
-  aws-sam.md                  SAM template, Lambda best practices, DynamoDB modelling, quiet costs
+  aws-sam.md                  SAM template, Lambda best practices, gradual deployments, DynamoDB modelling, quiet costs
   security-privacy.md         identity, data protection, privacy, application security
   frontend-ux.md              usability, visual design, printed material, accessibility, i18n
   review-checklist.md         what to check when reviewing a change
